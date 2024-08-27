@@ -31,6 +31,10 @@
             openssl
             pkg-config
           ];
+
+          shellHook = ''
+            echo "IN DA RUST WEEEE"
+          '';
         };
       });
     };

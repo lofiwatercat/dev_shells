@@ -30,7 +30,7 @@
       # default = pkgs.mkShell {
       #   packages = common;
       # };
-      rust = pkgs.mkShell {};
+      # rust = pkgs.mkShell {};
     });
     templates = {
       rust = {
