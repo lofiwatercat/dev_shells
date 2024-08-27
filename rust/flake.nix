@@ -5,32 +5,33 @@
   inputs = {
     # Simply the greatest package repository on the planet
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # A set of helper functions for using flakes
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, flake-utils, ...  }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        # System-specific nixpkgs 
-        pkgs = import nixpkgs { inherit system ; };
-      in {
-        devShells = {
-          default = pkgs.mkShell {
-            # Packages included in the environment
-            buildInputs = with pkgs; [
-              rustc
-              cargo
-              rustfmt
-              rust-analyzer
-              openssl
-              pkg-config
-            ];
+    let
+      allSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-            # Run when the shell is started up
-            shellHook = ''
-            '';
-          };
+      forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f{
+        pkgs = import nixpkgs { inherit system; };
+      });
+    in
+    {
+      devShells = forAllSystems ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            rustc
+            cargo
+            rustfmt
+            rust-analyzer
+            openssl
+            pkg-config
+          ];
         };
       });
+    };
 }
