@@ -1,4 +1,6 @@
+A collection of general development environments.
+
 To use, 
 ```
-nix develop 'github:lofiwatercat/dev_flakes?dir=EXAMPLE_LANGUAGE'
+nix develop 'github:lofiwatercat/dev_flakes#EXAMPLE_LANGUAGE'
 ```

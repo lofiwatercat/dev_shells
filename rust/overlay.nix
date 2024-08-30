@@ -1,6 +1,8 @@
 self: super: {
   rustDevShell = super.mkShell {
     packages = with super; [
+      git
+      
       rustc
       cargo
       rustfmt

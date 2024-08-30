@@ -17,8 +17,14 @@
 
       # Import language overlays
       rustOverlay = import ./rust/overlay.nix;
+      cOverlay = import ./c/overlay.nix;
+      nixOverlay = import ./nix/overlay.nix;
 
-      overlays = [ rustOverlay ];
+      overlays = [ 
+        rustOverlay 
+        cOverlay 
+        nixOverlay
+      ];
 
       forAllSystems =
         f:
@@ -30,6 +36,8 @@
         {
           # Insert new languages here
           rust = pkgs.rustDevShell;
+          c = pkgs.cDevShell;
+          nix = pkgs.nixDevShell;
         }
       );
     };
