@@ -1,6 +1,6 @@
-self: super: {
-  cDevShell = super.mkShell {
-    packages = with super; [
+final: prev: {
+  cDevShell = prev.mkShell {
+    packages = with prev; [
       git
 
       libclang

@@ -1,6 +1,6 @@
-self: super: {
-  rustDevShell = super.mkShell {
-    packages = with super; [
+final: prev: {
+  rustDevShell = prev.mkShell {
+    packages = with prev; [
       git
       
       rustc

@@ -40,7 +40,7 @@
           rust = pkgs.rustDevShell;
           c = pkgs.cDevShell;
           nix = pkgs.nixDevShell;
-          latex = pkgs.nixDevShell;
+          latex = pkgs.latexDevShell;
         }
       );
     };
