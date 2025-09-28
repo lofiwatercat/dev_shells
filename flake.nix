@@ -19,11 +19,13 @@
       rustOverlay = import ./rust/overlay.nix;
       cOverlay = import ./c/overlay.nix;
       nixOverlay = import ./nix/overlay.nix;
+      latexOverlay = import ./nix/overlay.nix;
 
       overlays = [ 
         rustOverlay 
         cOverlay 
         nixOverlay
+        latexOverlay
       ];
 
       forAllSystems =
@@ -38,6 +40,7 @@
           rust = pkgs.rustDevShell;
           c = pkgs.cDevShell;
           nix = pkgs.nixDevShell;
+          latex = pkgs.nixDevShell;
         }
       );
     };
