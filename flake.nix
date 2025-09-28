@@ -19,7 +19,7 @@
       rustOverlay = import ./rust/overlay.nix;
       cOverlay = import ./c/overlay.nix;
       nixOverlay = import ./nix/overlay.nix;
-      latexOverlay = import ./nix/overlay.nix;
+      latexOverlay = import ./flake/overlay.nix;
 
       overlays = [ 
         rustOverlay 
