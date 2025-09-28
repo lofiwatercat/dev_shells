@@ -1,6 +1,6 @@
-final: prev: {
-  latexDevShell = prev.mkShell {
-    packages = with prev; [
+self: super: {
+  latexDevShell = super.mkShell {
+    packages = with super; [
       git
 
       texlab
