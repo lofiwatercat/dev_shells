@@ -5,6 +5,10 @@ final: prev: {
 
       xorg.libX11
       xorg.libXrandr
+      xorg.libXinerama
+      xorg.libXcursor
+      xorg.libXi
+      xorg.Gl
     ];
 
     shellHook = ''
