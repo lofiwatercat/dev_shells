@@ -3,6 +3,7 @@ final: prev: {
     packages = with prev; [
       git
 
+      pkg-config
       xorg.libX11
       xorg.libXrandr
       xorg.libXinerama
