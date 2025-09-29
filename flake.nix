@@ -21,6 +21,7 @@
       cppOverlay = import ./cpp/overlay.nix;
       nixOverlay = import ./nix/overlay.nix;
       latexOverlay = import ./latex/overlay.nix;
+      x11Overlay = import ./x11/overlay.nix;
 
       overlays = [ 
         rustOverlay 
@@ -28,6 +29,7 @@
         cppOverlay
         nixOverlay
         latexOverlay
+        x11Overlay
       ];
 
       forAllSystems =
@@ -44,6 +46,7 @@
           cpp = pkgs.cppDevShell;
           nix = pkgs.nixDevShell;
           latex = pkgs.latexDevShell;
+          x11 = pkgs.x11DevShell;
         }
       );
     };
