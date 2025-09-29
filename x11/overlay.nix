@@ -4,12 +4,11 @@ final: prev: {
       git
 
       pkg-config
-      xorg.libX11
-      xorg.libXrandr
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXi
-      xorg.Gl
+      libx11
+      libxrandr
+      libxinerama
+      libxcursor
+      libxi
     ];
 
     shellHook = ''
