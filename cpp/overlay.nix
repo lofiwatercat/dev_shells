@@ -1,5 +1,5 @@
 final: prev: {
-  cDevShell = prev.mkShell {
+  cppDevShell = prev.mkShell {
     packages = with prev; [
       git
 
@@ -16,7 +16,7 @@ final: prev: {
     ];
 
     shellHook = ''
-      echo "Entered a c development environment"
+      echo "Entered a cpp development environment"
     '';
   };
 }
