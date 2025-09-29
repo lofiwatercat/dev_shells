@@ -4,14 +4,16 @@ final: prev: {
       git
 
       pkg-config
-      libx11
-      libxrandr
+      xorg.libX11
+      xorg.libXrandr
       xorg.libXinerama
-      libxcursor
+      xorg.libXcursor
       xorg.libXi
+      mesa
     ];
 
     shellHook = ''
+      export PKG_CONFIG_PATH="${prev.lib.makeBinPath (prev.packages)}/lib/pkgconfig:$PKG_CONFIG_PATH"
       echo "Entered a X11 development environment"
     '';
   };
