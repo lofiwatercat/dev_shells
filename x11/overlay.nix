@@ -6,9 +6,9 @@ final: prev: {
       pkg-config
       libx11
       libxrandr
-      libxinerama
+      xorg.libXinerama
       libxcursor
-      libxi
+      xorg.libXi
     ];
 
     shellHook = ''
