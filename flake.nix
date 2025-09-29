@@ -18,12 +18,14 @@
       # Import language overlays
       rustOverlay = import ./rust/overlay.nix;
       cOverlay = import ./c/overlay.nix;
+      cppOverlay = import ./cpp/overlay.nix;
       nixOverlay = import ./nix/overlay.nix;
       latexOverlay = import ./latex/overlay.nix;
 
       overlays = [ 
         rustOverlay 
         cOverlay 
+        cppOverlay
         nixOverlay
         latexOverlay
       ];
@@ -39,6 +41,7 @@
           # Insert new languages here
           rust = pkgs.rustDevShell;
           c = pkgs.cDevShell;
+          cpp = pkgs.cppDevShell;
           nix = pkgs.nixDevShell;
           latex = pkgs.latexDevShell;
         }
