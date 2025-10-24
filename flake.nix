@@ -22,7 +22,7 @@
       nixOverlay = import ./nix/overlay.nix;
       latexOverlay = import ./latex/overlay.nix;
       x11Overlay = import ./x11/overlay.nix;
-      typescriptOverlay = import ./typescript/overlay.nix
+      typescriptOverlay = import ./typescript/overlay.nix;
 
       overlays = [ 
         rustOverlay 
