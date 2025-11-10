@@ -23,6 +23,7 @@
       latexOverlay = import ./latex/overlay.nix;
       x11Overlay = import ./x11/overlay.nix;
       typescriptOverlay = import ./typescript/overlay.nix;
+      rubyOverlay = import ./ruby/overlay.nix
 
       overlays = [ 
         rustOverlay 
@@ -32,6 +33,7 @@
         latexOverlay
         x11Overlay
         typescriptOverlay
+        rubyOverlay
       ];
 
       forAllSystems =
@@ -50,6 +52,7 @@
           latex = pkgs.latexDevShell;
           x11 = pkgs.x11DevShell;
           typescript = pkgs.typescriptDevShell;
+          ruby = pkgs.rubyDevShell;
         }
       );
     };
