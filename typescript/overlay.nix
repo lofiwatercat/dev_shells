@@ -6,6 +6,7 @@ final: prev: {
       typescript
       typescript-language-server
       nodejs_24
+      heroku
     ];
 
     shellHook = ''
